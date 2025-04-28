@@ -1,0 +1,5 @@
+Ejercicio 1: Formulario de contacto con validación simple
+ Crea un formulario con los siguientes campos: nombre, correo electrónico y mensaje. Agrega un
+ botón de envío. Usa JavaScript para validar que los campos no estén vacíos y que el correo tenga
+ formato válido (@ y .). Si hay errores, muestra mensajes debajo de los campos. Si todo está bien,
+ muestra una alerta con el mensaje “Formulario enviado correctamente”
