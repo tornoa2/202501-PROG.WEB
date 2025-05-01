@@ -1,0 +1,47 @@
+body {
+    background-color: #f8f9fa; /* Color clarito */
+    font-family: Arial, sans-serif;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  h1 {
+    margin-bottom: 30px;
+  }
+  
+  .tablero-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 60px; /* Separación grande entre tableros */
+    flex-wrap: wrap;
+  }
+  
+  .tablero {
+    display: grid;
+    grid-template-columns: repeat(8, 50px); /* 8 columnas */
+    gap: 8px; /* Espacio entre botones */
+  }
+  
+  .tablero button {
+    width: 50px;
+    height: 50px;
+    background-color: #0dcaf0; /* Color azul Bootstrap "info" */
+    border: none;
+    border-radius: 8px;
+    transition: transform 0.2s, background-color 0.2s;
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+  }
+  
+  .tablero button:hover {
+    background-color: #31d2f2; /* Un azul más claro al pasar el mouse */
+    transform: scale(1.1);
+  }
+  
+  .tablero button:focus {
+    outline: none;
+    box-shadow: 0 0 5px #0dcaf0;
+  }
+  

@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Juego del Espejo</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <script src="ejercicio10.js"></script>
+  <link rel="stylesheet" href="ejercicio10.css">
+</head>
+<body>
+
+  <h1>Juego del Espejo</h1>
+
+  <div class="tablero-container">
+
+    <!-- TABLERO IZQUIERDO -->
+    <div id="tablero-izquierdo" class="tablero">
+      <!-- 8x8 botones -->
+      <button data-fila="0" data-columna="0"></button>
+      <button data-fila="0" data-columna="1"></button>
+      <button data-fila="0" data-columna="2"></button>
+      <button data-fila="0" data-columna="3"></button>
+      <button data-fila="0" data-columna="4"></button>
+      <button data-fila="0" data-columna="5"></button>
+      <button data-fila="0" data-columna="6"></button>
+      <button data-fila="0" data-columna="7"></button>
+
+      <button data-fila="1" data-columna="0"></button>
+      <button data-fila="1" data-columna="1"></button>
+      <button data-fila="1" data-columna="2"></button>
+      <button data-fila="1" data-columna="3"></button>
+      <button data-fila="1" data-columna="4"></button>
+      <button data-fila="1" data-columna="5"></button>
+      <button data-fila="1" data-columna="6"></button>
+      <button data-fila="1" data-columna="7"></button>
+
+      <button data-fila="2" data-columna="0"></button>
+      <button data-fila="2" data-columna="1"></button>
+      <button data-fila="2" data-columna="2"></button>
+      <button data-fila="2" data-columna="3"></button>
+      <button data-fila="2" data-columna="4"></button>
+      <button data-fila="2" data-columna="5"></button>
+      <button data-fila="2" data-columna="6"></button>
+      <button data-fila="2" data-columna="7"></button>
+
+      <button data-fila="3" data-columna="0"></button>
+      <button data-fila="3" data-columna="1"></button>
+      <button data-fila="3" data-columna="2"></button>
+      <button data-fila="3" data-columna="3"></button>
+      <button data-fila="3" data-columna="4"></button>
+      <button data-fila="3" data-columna="5"></button>
+      <button data-fila="3" data-columna="6"></button>
+      <button data-fila="3" data-columna="7"></button>
+
+      <button data-fila="4" data-columna="0"></button>
+      <button data-fila="4" data-columna="1"></button>
+      <button data-fila="4" data-columna="2"></button>
+      <button data-fila="4" data-columna="3"></button>
+      <button data-fila="4" data-columna="4"></button>
+      <button data-fila="4" data-columna="5"></button>
+      <button data-fila="4" data-columna="6"></button>
+      <button data-fila="4" data-columna="7"></button>
+
+      <button data-fila="5" data-columna="0"></button>
+      <button data-fila="5" data-columna="1"></button>
+      <button data-fila="5" data-columna="2"></button>
+      <button data-fila="5" data-columna="3"></button>
+      <button data-fila="5" data-columna="4"></button>
+      <button data-fila="5" data-columna="5"></button>
+      <button data-fila="5" data-columna="6"></button>
+      <button data-fila="5" data-columna="7"></button>
+
+      <button data-fila="6" data-columna="0"></button>
+      <button data-fila="6" data-columna="1"></button>
+      <button data-fila="6" data-columna="2"></button>
+      <button data-fila="6" data-columna="3"></button>
+      <button data-fila="6" data-columna="4"></button>
+      <button data-fila="6" data-columna="5"></button>
+      <button data-fila="6" data-columna="6"></button>
+      <button data-fila="6" data-columna="7"></button>
+
+      <button data-fila="7" data-columna="0"></button>
+      <button data-fila="7" data-columna="1"></button>
+      <button data-fila="7" data-columna="2"></button>
+      <button data-fila="7" data-columna="3"></button>
+      <button data-fila="7" data-columna="4"></button>
+      <button data-fila="7" data-columna="5"></button>
+      <button data-fila="7" data-columna="6"></button>
+      <button data-fila="7" data-columna="7"></button>
+    </div>
+
+    <!-- TABLERO DERECHO -->
+    <div id="tablero-derecho" class="tablero">
+      <!-- 8x8 botones -->
+      <button data-fila="0" data-columna="0"></button>
+      <button data-fila="0" data-columna="1"></button>
+      <button data-fila="0" data-columna="2"></button>
+      <button data-fila="0" data-columna="3"></button>
+      <button data-fila="0" data-columna="4"></button>
+      <button data-fila="0" data-columna="5"></button>
+      <button data-fila="0" data-columna="6"></button>
+      <button data-fila="0" data-columna="7"></button>
+
+      <button data-fila="1" data-columna="0"></button>
+      <button data-fila="1" data-columna="1"></button>
+      <button data-fila="1" data-columna="2"></button>
+      <button data-fila="1" data-columna="3"></button>
+      <button data-fila="1" data-columna="4"></button>
+      <button data-fila="1" data-columna="5"></button>
+      <button data-fila="1" data-columna="6"></button>
+      <button data-fila="1" data-columna="7"></button>
+
+      <button data-fila="2" data-columna="0"></button>
+      <button data-fila="2" data-columna="1"></button>
+      <button data-fila="2" data-columna="2"></button>
+      <button data-fila="2" data-columna="3"></button>
+      <button data-fila="2" data-columna="4"></button>
+      <button data-fila="2" data-columna="5"></button>
+      <button data-fila="2" data-columna="6"></button>
+      <button data-fila="2" data-columna="7"></button>
+
+      <button data-fila="3" data-columna="0"></button>
+      <button data-fila="3" data-columna="1"></button>
+      <button data-fila="3" data-columna="2"></button>
+      <button data-fila="3" data-columna="3"></button>
+      <button data-fila="3" data-columna="4"></button>
+      <button data-fila="3" data-columna="5"></button>
+      <button data-fila="3" data-columna="6"></button>
+      <button data-fila="3" data-columna="7"></button>
+
+      <button data-fila="4" data-columna="0"></button>
+      <button data-fila="4" data-columna="1"></button>
+      <button data-fila="4" data-columna="2"></button>
+      <button data-fila="4" data-columna="3"></button>
+      <button data-fila="4" data-columna="4"></button>
+      <button data-fila="4" data-columna="5"></button>
+      <button data-fila="4" data-columna="6"></button>
+      <button data-fila="4" data-columna="7"></button>
+
+      <button data-fila="5" data-columna="0"></button>
+      <button data-fila="5" data-columna="1"></button>
+      <button data-fila="5" data-columna="2"></button>
+      <button data-fila="5" data-columna="3"></button>
+      <button data-fila="5" data-columna="4"></button>
+      <button data-fila="5" data-columna="5"></button>
+      <button data-fila="5" data-columna="6"></button>
+      <button data-fila="5" data-columna="7"></button>
+
+      <button data-fila="6" data-columna="0"></button>
+      <button data-fila="6" data-columna="1"></button>
+      <button data-fila="6" data-columna="2"></button>
+      <button data-fila="6" data-columna="3"></button>
+      <button data-fila="6" data-columna="4"></button>
+      <button data-fila="6" data-columna="5"></button>
+      <button data-fila="6" data-columna="6"></button>
+      <button data-fila="6" data-columna="7"></button>
+
+      <button data-fila="7" data-columna="0"></button>
+      <button data-fila="7" data-columna="1"></button>
+      <button data-fila="7" data-columna="2"></button>
+      <button data-fila="7" data-columna="3"></button>
+      <button data-fila="7" data-columna="4"></button>
+      <button data-fila="7" data-columna="5"></button>
+      <button data-fila="7" data-columna="6"></button>
+      <button data-fila="7" data-columna="7"></button>
+    </div>
+  </div>
+</body>
+</html>

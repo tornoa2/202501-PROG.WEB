@@ -1,0 +1,79 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  #header {
+    width: 100%;
+    overflow: hidden;
+    padding: 10px;
+  }
+  
+  #titulo {
+    float: left;
+    width: 70%;
+    padding: 10px;
+  }
+  
+  #logo {
+    float: right;
+    width: 25%;
+    text-align: center;
+    padding: 10px;
+  }
+  
+  #contenido {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  #menu {
+    float: left;
+    width: 20%;
+    padding: 10px;
+  }
+  
+  #noticia {
+    float: left;
+    width: 55%;
+    padding: 10px;
+  }
+  
+  #imagen {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  #footer {
+    width: 100%;
+    overflow: hidden;
+    margin-top: 10px;
+  }
+  
+  #copyright {
+    float: left;
+    width: 45%;
+    padding: 10px;
+  }
+  
+  #links {
+    float: right;
+    width: 45%;
+    padding: 10px;
+    text-align: right;
+  }
+  
+  /* Estilos extra para enlaces */
+  a {
+    text-decoration: none;
+    color: blue;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  

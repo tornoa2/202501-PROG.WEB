@@ -1,0 +1,59 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+}
+
+.titulo, .logo {
+  padding: 10px;
+}
+
+.contenido {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.menu, .noticia, .imagen {
+  padding: 10px;
+}
+
+.menu {
+  flex: 1;
+}
+
+.noticia {
+  flex: 2.5;
+}
+
+.imagen {
+  flex: 1;
+  text-align: center;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.footer div {
+  padding: 10px;
+  width: 45%;
+}
+
+a {
+  text-decoration: none;
+  color: blue;
+}
+
+a:hover {
+  text-decoration: underline;
+}
