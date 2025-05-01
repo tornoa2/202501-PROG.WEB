@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Catálogo de Juegos</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <header class="navbar">
+    <h1 class="logo">🎮 GameMarket</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="catalogo.html">Catálogo</a></li>
+        <li><a href="carrito.html">Carrito</a></li>
+        <li id="link-sesion"><a href="login.html">Iniciar Sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h2>Catálogo de Juegos</h2>
+  
+    <!-- Filtros -->
+    <div class="filtros">
+      <label>
+        Categoría:
+        <select id="filtro-categoria">
+          <option value="todos">Todos</option>
+          <option value="RPG">RPG</option>
+          <option value="Aventura">Aventura</option>
+          <option value="Deportes">Deportes</option>
+        </select>
+      </label>
+  
+      <label>
+        Plataforma:
+        <select id="filtro-plataforma">
+          <option value="todos">Todas</option>
+          <option value="PC">PC</option>
+          <option value="PS5">PS5</option>
+          <option value="Switch">Switch</option>
+        </select>
+      </label>
+    </div>
+  
+    <section id="juegos-container" class="juegos-grid"></section>
+  </main>  
+
+  <footer class="footer">
+    <p>&copy; 2025 GameMarket</p>
+  </footer>
+
+  <script src="js/catalogo.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>
