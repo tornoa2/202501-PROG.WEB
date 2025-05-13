@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Iniciar Sesión / Registro</title>
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">🎮 GameMarket</h1>
+  </header>
+
+  <main class="main-content">
+    <div class="auth-container">
+      <h2>Iniciar Sesión</h2>
+      <form id="login-form">
+        <input type="text" id="login-user" placeholder="Email o usuario" required>
+        <input type="password" id="login-pass" placeholder="Contraseña" required>
+        <button type="submit">Entrar</button>  
+      </form>
+
+      <h2>Registrarse</h2>
+      <form id="registro-form">
+        <input type="text" id="reg-usuario" placeholder="Usuario" required>
+        <input type="email" id="reg-email" placeholder="Email" required>
+        <input type="password" id="reg-pass" placeholder="Contraseña" required>
+        <button type="submit">Crear cuenta</button>
+      </form>
+    </div>
+
+    <div id="mensaje" class="mensaje oculto"></div>
+  </main>
+
+  <script src="js/login.js"></script>
+</body>
+</html>

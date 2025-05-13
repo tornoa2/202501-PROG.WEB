@@ -1,0 +1,130 @@
+
+.catalogo-lista {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+.juego-item {
+  display: flex;
+  gap: 15px;
+  padding: 10px;
+  border-radius: 5px;
+  align-items: center;
+  background-color: transparent;
+}
+
+.juego-img {
+  width: 180px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 4px;
+}
+
+.juego-info {
+  flex-grow: 1;
+}
+
+.juego-info h3 {
+  margin: 0 0 6px 0;
+  font-size: 16px;
+  color: #fff;
+}
+
+.juego-descripcion {
+  color: #b8c6d4;
+  font-size: 14px;
+  margin: 0;
+}
+
+.juego-precio-box {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  min-width: 120px;
+}
+
+.juego-descuento {
+  display: flex;
+  align-items: center;
+  font-size: 14px;
+  line-height: 18px;
+  padding: 0 4px;
+  border-radius: 1px;
+  font-weight: 500;
+  font-family: "Motiva Sans", sans-serif;
+  background: #4c6b22;
+  color: #BEEE11;
+  min-width: 38px;
+  height: 18px;
+  justify-content: center;
+}
+
+
+.juego-precios {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-left: auto;
+}
+
+
+.juego-precio-original {
+  text-decoration: line-through;
+  color: #aaa;
+  font-size: 13px;
+}
+
+.juego-precio-final {
+  color: #fff;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.sin-descuento {
+  margin-bottom: 6px;
+}
+
+.juego-fecha {
+  font-size: 12px;
+  color: #b8c6d4;
+  margin-top: 6px;
+}
+
+.juego-precios-contenedor {
+  display: flex;
+  align-items: flex-start;  /* más pegado al borde superior */
+  gap: 8px;                 /* más cerrado */
+}
+
+
+.juego-item-body {
+  background-color: #2a475e;
+  display: flex;
+  justify-content: space-between;
+  flex-grow: 1;
+  padding: 12px;
+  border-radius: 5px;
+  min-height: 80px; /* ✅ Altura mínima uniforme */
+  box-sizing: border-box;
+  align-items: center;
+}
+
+.juego-plataformas {
+  margin: 0 0 6px 0;
+}
+
+.icono-plataforma {
+  font-size: 16px;
+  margin-right: 6px;
+  vertical-align: middle;
+}
+
+.plataforma-icon {
+  max-height: 18px;
+  max-width: 18px;
+  object-fit: contain;
+  margin-right: 4px;
+  vertical-align: middle;
+}

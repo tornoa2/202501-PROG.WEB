@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard Admin | GameMarket</title>
+  <link rel="stylesheet" href="../css/styles.css">
+</head>
+<body>
+  
+  <header class="navbar">
+    <h1 class="logo">Panel de Administrador</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="dashboard.html" class="activo">Dashboard</a></li>
+        <li><a href="../index.html">Juegos</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li><a href="#" onclick="cerrarSesion()">Cerrar sesión</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  <main class="main-content">
+    <h2>Control del Administrador</h2>
+    <div class="admin-cards">
+      <a href="juegos.html" class="admin-card">
+        <h3>🎮 Gestión de Juegos</h3>
+        <p>Agregar, editar, eliminar y filtrar juegos del catálogo.</p>
+      </a>
+      <a href="noticias.html" class="admin-card">
+        <h3>📰 Gestión de Noticias</h3>
+        <p>Publicar, editar o eliminar noticias destacadas.</p>
+      </a>
+    </div>
+  </main>
+
+  <script>
+    const u = JSON.parse(localStorage.getItem("usuario"));
+    if (!u || u.rol !== "admin") window.location.href = "../login.html";
+
+    function cerrarSesion() {
+      localStorage.removeItem("usuario");
+      localStorage.removeItem("sesionActiva");
+      window.location.href = "../login.html";
+    }
+  </script>
+
+</body>
+</html>
