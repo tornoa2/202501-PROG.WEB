@@ -26,6 +26,10 @@ function mostrarFormulario(indice = null) {
     document.getElementById("editandoIndice").value = indice;
     document.getElementById("tituloForm").innerText = "Editar Juego";
 
+    const selectCategorias = document.getElementById("categoria");
+    Array.from(selectCategorias.options).forEach(option => {
+      option.selected = Array.isArray(juego.categoria) && juego.categoria.includes(option.value);
+    });
 
     if (Array.isArray(juego.plataformas)) {
       juego.plataformas.forEach(p => {
@@ -59,11 +63,13 @@ function guardarJuego() {
   }
   
   const carpeta = nombre.replaceAll(' ', '_');
-  const juego = { nombre, categoria, precio, fecha, descuento, carpeta, plataformas };
+  const juego = { nombre, categoria, precio, fecha, descuento, carpeta, plataformas,visible: false};
   
   if (indice === "") {
+    juego.visible = false;
     juegos.push(juego);
   } else {
+    juego.visible = juegos[indice].visible;
     juegos[indice] = juego;
   }
   
@@ -115,6 +121,12 @@ function aplicarFiltros() {
       <td>
         <button onclick="editarJuego(${i})">Editar</button>
         <button onclick="eliminarJuego(${i})">Eliminar</button>
+        <button onclick="alternarVisibilidad(${i})"
+          class="boton-estado"
+          style="background-color: ${juego.visible ? '#4caf50' : '#f44336'}"
+          title="${juego.visible ? 'Ocultar juego' : 'Mostrar juego'}">
+          ●
+        </button>
       </td>
     `;
     cuerpo.appendChild(fila);
@@ -151,11 +163,18 @@ function actualizarFiltroCategorias() {
   });
 }
 
+/*funcion para limitar la seleccion de categorias*/
 function limitarSeleccion(selectElement) {
   const seleccionadas = Array.from(selectElement.selectedOptions);
-  if (seleccionadas.length > 5) {
+  if (seleccionadas.length > 4) {
     seleccionadas[seleccionadas.length - 1].selected = false;
-    mostrarMensaje("Solo puedes seleccionar hasta 5 categorías.", "error");
   }
+}
+
+/* Boton para ocultar el juego, en caso no se quiera eliminar del todo*/
+function alternarVisibilidad(i) {
+  juegos[i].visible = !juegos[i].visible;
+  guardarEnLocalStorage();
+  aplicarFiltros();
 }
 

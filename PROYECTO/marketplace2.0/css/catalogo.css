@@ -94,10 +94,9 @@
 
 .juego-precios-contenedor {
   display: flex;
-  align-items: flex-start;  /* más pegado al borde superior */
-  gap: 8px;                 /* más cerrado */
+  align-items: flex-start;
+  gap: 20px;
 }
-
 
 .juego-item-body {
   background-color: #2a475e;
@@ -106,19 +105,13 @@
   flex-grow: 1;
   padding: 12px;
   border-radius: 5px;
-  min-height: 80px; /* ✅ Altura mínima uniforme */
+  min-height: 80px;
   box-sizing: border-box;
   align-items: center;
 }
 
 .juego-plataformas {
   margin: 0 0 6px 0;
-}
-
-.icono-plataforma {
-  font-size: 16px;
-  margin-right: 6px;
-  vertical-align: middle;
 }
 
 .plataforma-icon {

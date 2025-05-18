@@ -1,68 +1,98 @@
-const usuario = JSON.parse(localStorage.getItem("usuario"));
-const nav = document.getElementById("usuarioNav");
-
-if (usuario) {
-  nav.innerHTML = `
-    ${usuario.rol === "admin" ? '<a href="admin/dashboard.html">Dashboard</a> | ' : ''}
-    <a href="#" onclick="cerrarSesion()">Cerrar sesión (${usuario.username})</a>
-  `;
-} else {
-  nav.innerHTML = `<a href="login.html">Iniciar sesión</a>`;
-}
-
-function cerrarSesion() {
-  localStorage.removeItem("usuario");
-  localStorage.removeItem("sesionActiva");
-  window.location.href = "index.html";
-  window.location.reload();
-}
-
 const juegos = JSON.parse(localStorage.getItem("juegos")) || [];
 const contenedor = document.getElementById("catalogo");
 
 if (juegos.length === 0) {
-  const vacio = document.createElement("p");
-  vacio.textContent = "Aún no hay juegos disponibles.";
-  contenedor.appendChild(vacio);
+  const mensaje = document.createElement("p");
+  mensaje.textContent = "Aún no hay juegos disponibles.";
+  contenedor.appendChild(mensaje);
+} else {
+  for (let i = 0; i < juegos.length; i++) {
+    const juego = juegos[i];
+    if (juego.visible === false) continue;
+
+    const descuento = juego.descuento || 0;
+    const precioFinal = juego.precio * (1 - descuento / 100);
+
+    const divJuego = document.createElement("div");
+    divJuego.className = "juego-item";
+
+    // Imagen
+    const imagen = document.createElement("img");
+    imagen.src = "assets/img/" + juego.carpeta + "/header.png";
+    imagen.alt = juego.nombre;
+    imagen.className = "juego-img";
+    imagen.onerror = function () {
+      this.src = "assets/img/placeholder.jpg";
+    };
+    divJuego.appendChild(imagen);
+
+    // Info
+    const info = document.createElement("div");
+    info.className = "juego-item-body";
+
+    const titulo = document.createElement("h3");
+    titulo.textContent = juego.nombre;
+
+    const descripcion = document.createElement("p");
+    descripcion.className = "juego-descripcion";
+    descripcion.textContent = Array.isArray(juego.categoria) ? juego.categoria.join(", ") : juego.categoria;
+
+    const plataformas = document.createElement("div");
+    plataformas.className = "juego-plataformas";
+    plataformas.innerHTML = obtenerIconosPlataforma(juego.plataformas || []);
+
+    const infoContainer = document.createElement("div");
+    infoContainer.className = "juego-info";
+    infoContainer.appendChild(titulo);
+    infoContainer.appendChild(plataformas);
+    infoContainer.appendChild(descripcion);
+    info.appendChild(infoContainer);
+
+    // Precio
+    const precioBox = document.createElement("div");
+    precioBox.className = "juego-precio-box";
+
+    if (descuento > 0) {
+      const descuentoDiv = document.createElement("div");
+      descuentoDiv.className = "juego-descuento";
+      descuentoDiv.textContent = "-" + descuento + "%";
+
+      const precioOriginal = document.createElement("div");
+      precioOriginal.className = "juego-precio-original";
+      precioOriginal.textContent = "S/. " + juego.precio.toFixed(2);
+
+      const precioFinalDiv = document.createElement("div");
+      precioFinalDiv.className = "juego-precio-final";
+      precioFinalDiv.textContent = "S/. " + precioFinal.toFixed(2);
+
+      const precios = document.createElement("div");
+      precios.className = "juego-precios";
+      precios.appendChild(precioOriginal);
+      precios.appendChild(precioFinalDiv);
+
+      const contenedorDescuento = document.createElement("div");
+      contenedorDescuento.className = "juego-precios-contenedor";
+      contenedorDescuento.appendChild(descuentoDiv);
+      contenedorDescuento.appendChild(precios);
+
+      precioBox.appendChild(contenedorDescuento);
+    } else {
+      const precioSimple = document.createElement("div");
+      precioSimple.className = "juego-precio-final sin-descuento";
+      precioSimple.textContent = "S/. " + precioFinal.toFixed(2);
+      precioBox.appendChild(precioSimple);
+    }
+
+    const fecha = document.createElement("div");
+    fecha.className = "juego-fecha";
+    fecha.textContent = formatearFecha(juego.fecha);
+
+    precioBox.appendChild(fecha);
+    info.appendChild(precioBox);
+    divJuego.appendChild(info);
+    contenedor.appendChild(divJuego);
+  }
 }
-
-juegos.forEach(juego => {
-  const precioFinal = juego.precio * (1 - (juego.descuento || 0) / 100);
-  const item = document.createElement("div");
-  item.className = "juego-item";
-
-  item.innerHTML = `
-    <img class="juego-img" src="assets/img/${juego.carpeta}/header.png"
-         alt="${juego.nombre}" onerror="this.src='assets/img/placeholder.jpg'">
-
-    <div class="juego-item-body">
-      <div class="juego-info">
-        <h3>${juego.nombre}</h3>
-        <div class="juego-plataformas">
-          ${obtenerIconosPlataforma(juego.plataformas || [])}
-        </div>
-        <p class="juego-descripcion">${juego.categoria}</p>
-      </div>
-
-      <div class="juego-precio-box">
-        ${juego.descuento > 0 ? `
-          <div class="juego-precios-contenedor">
-            <div class="juego-descuento">-${juego.descuento}%</div>
-            <div class="juego-precios">
-              <div class="juego-precio-original">S/. ${juego.precio.toFixed(2)}</div>
-              <div class="juego-precio-final">S/. ${precioFinal.toFixed(2)}</div>
-            </div>
-          </div>
-        ` : `
-          <div class="juego-precio-final sin-descuento">S/. ${precioFinal.toFixed(2)}</div>
-        `}
-        <div class="juego-fecha">${formatearFecha(juego.fecha)}</div>
-      </div>
-    </div>
-  `;
-
-  contenedor.appendChild(item);
-});
 
 function obtenerIconosPlataforma(lista) {
   const iconos = {
@@ -70,14 +100,16 @@ function obtenerIconosPlataforma(lista) {
     macos: '<img src="assets/icons/logotipo-de-mac-os.png" class="plataforma-icon">',
     xbox: '<img src="assets/icons/logotipo-de-xbox.png" class="plataforma-icon">',
     playstation: '<img src="assets/icons/logotipo-de-playstation.png" class="plataforma-icon">',
-    nintendo: '<img src="assets/icons/nintendo-switch.png" class="plataforma-icon">',
+    nintendo: '<img src="assets/icons/nintendo-switch.png" class="plataforma-icon">'
   };
-  return lista.map(p => `<span class="icono-plataforma" title="${p}">${iconos[p]}</span>`).join(" ");
+
+  return lista.map(nombre => {
+    return iconos[nombre] ? `<span class="icono-plataforma" title="${nombre}">${iconos[nombre]}</span>` : "";
+  }).join("");
 }
 
-
-function formatearFecha(fechaStr) {
-  const fecha = new Date(fechaStr);
+function formatearFecha(textoFecha) {
+  const fecha = new Date(textoFecha);
   const opciones = { day: "2-digit", month: "short", year: "numeric" };
   return fecha.toLocaleDateString("es-PE", opciones).toUpperCase();
 }

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Reset your Password – LoquitaStore</title>
+  <link rel="stylesheet" href="/ESTILOS/styles_reset.css" />
+</head>
+<body>
+  <nav class="nav">
+    <div class="logo">
+      <img src="/IMAGENES/Logo.JPG" alt="LoquitaStore Logo">
+    </div>
+    <div class="brand">LoquitaStore</div>
+  </nav>
+
+  <div class="reset-container">
+    <button class="back-btn" onclick="location.href='login.html'">&larr;</button>
+    <div class="reset-card">
+      <h1>Restablece tu contraseña</h1>
+      <p class="info">
+        Ingresa el correo electrónico verificado de tu cuenta y te enviaremos un mensaje para confirmar el restablecimiento de tu contraseña.
+      </p>
+      <form id="reset-form" novalidate>
+        <div class="form-group">
+          <label for="email">Email:</label>
+          <input
+            type="email"
+            id="email"
+            name="email"
+            placeholder="Enter your email"
+            required
+          />
+          <small class="error"></small>
+        </div>
+        <div class="form-group">
+          <label for="new-password">New password:</label>
+          <input
+            type="password"
+            id="new-password"
+            name="new-password"
+            placeholder="Enter new password"
+            required
+          />
+          <small class="error"></small>
+        </div>
+        <div class="form-group">
+          <label for="confirm-password">Confirm new password:</label>
+          <input
+            type="password"
+            id="confirm-password"
+            name="confirm-password"
+            placeholder="Confirm new password"
+            required
+          />
+          <small class="error"></small>
+        </div>
+        <button type="submit" class="btn">Restablecer contraseña</button>
+      </form>
+    </div>
+  </div>
+
+  <script src="/JS_PAGINA/reset.js"></script>
+</body>
+</html>

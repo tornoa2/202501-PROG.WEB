@@ -2,26 +2,28 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Tienda | GameMarket</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tienda | LoquitaStore</title>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/styles.css">
   <link rel="stylesheet" href="css/catalogo.css">
+  <script defer src="js/catalogo.js"></script>
+  <script defer src="js/autenticacion.js"></script>
 </head>
 <body>
 
   <header class="navbar">
-    <div class="logo">GameMarket</div>
+    <h1 class="logo">LoquitaStore</h1>
     <nav>
       <ul class="nav-links">
         <li><a href="index.html">Tienda</a></li>
-        <li><a href="login.html" id="usuarioNav">Iniciar sesión</a></li>
+        <li><a href="noticias.html">Noticias</a></li>
+        <li id="usuarioNav"></li>
       </ul>
     </nav>
   </header>
 
-  <main class="catalogo-lista" id="catalogo">
-  </main>
+  <main class="catalogo-lista" id="catalogo"></main>
 
-  <script src="js/catalogo.js"></script>
 </body>
 </html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestor de Noticias</title>
+  <link rel="stylesheet" href="../css/styles.css">
+  <script defer src="../js/noticiasAdmin.js"></script>
+  <script defer src="../js/autenticacion.js"></script>
+</head>
+<body>
+
+  <header class="navbar">
+    <h1 class="logo">Gestor de Noticias</h1>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="../index.html">Tienda</a></li>
+        <li><a href="../noticias.html">Noticias</a></li>
+        <li id="usuarioNav"></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="main-content">
+    <h3>Agregar / Editar Noticia</h3>
+    <form id="formNoticia">
+      <input type="hidden" id="editandoIndice">
+
+      <label>Título:</label>
+      <input type="text" id="titulo" required>
+
+      <label>Contenido:</label>
+      <textarea id="contenido" rows="4" required></textarea>
+
+      <label>Fecha:</label>
+      <input type="date" id="fecha" required>
+
+      <div class="acciones-form">
+        <button type="submit">Guardar</button>
+        <button type="button" onclick="cancelarEdicion()">Cancelar</button>
+      </div>
+    </form>
+
+    <h3>Noticias registradas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Título</th>
+          <th>Contenido</th>
+          <th>Fecha</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody id="tablaNoticias"></tbody>
+    </table>
+  </main>
+
+</body>
+</html>
