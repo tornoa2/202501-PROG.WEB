@@ -27,7 +27,7 @@ const generosDisponibles = [
 ]
 
 const plataformasDisponibles = [
-  'PC', 'PS4', 'PS5', 'Xbox One', 'Xbox Series X', 'Nintendo Switch'
+  'PC', 'PS5', 'Xbox Series X', 'Nintendo Switch'
 ]
 
 function JuegoForm({ onGuardar, onCancelar, juegoEditado, editIndex }: Props) {

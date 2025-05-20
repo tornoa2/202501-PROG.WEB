@@ -95,3 +95,10 @@
   color: #888;
   font-weight: bold;
 }
+
+.cell.descripcion {
+  max-width: 600px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}

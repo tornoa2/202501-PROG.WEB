@@ -76,7 +76,7 @@ function GestorNoticiasPage() {
             {noticias.map((n, i) => (
               <tr key={i}>
                 <td className="cell">{n.titulo}</td>
-                <td className="cell">{n.descripcion}</td>
+                <td className="cell descripcion">{n.descripcion}</td>
                 <td className="cell">
                   <button onClick={() => editarNoticia(i)}>✏️</button>
                   <button onClick={() => setIndexParaEliminar(i)}>🗑️</button>

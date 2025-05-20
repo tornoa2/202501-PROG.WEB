@@ -99,6 +99,7 @@ function GestorCatalogoPage() {
   })
 
   return (
+    
     <div className="container">
       <div className="header">
         <h2>Catalogo de Juegos</h2>
