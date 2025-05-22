@@ -1,6 +1,5 @@
 import { Routes, Route } from 'react-router-dom'
 import AdminLayout from './components/layout/AdminLayout'
-import DashboardPage from './pages/DashboardPage'
 import GestorCatalogoPage from './pages/GestorCatalogoPage'
 import GestorNoticiasPage from './pages/GestorNoticiasPage'
 import NoticiasPage from './pages/NoticiasPage'
@@ -15,7 +14,6 @@ function App() {
 
       {/* Admin layout */}
       <Route path="/admin" element={<AdminLayout />}>
-        <Route path="dashboard" element={<DashboardPage />} />
         <Route path="gestorJuegos" element={<GestorCatalogoPage />} />
         <Route path="gestorNoticias" element={<GestorNoticiasPage />} />
         <Route path="users" element={<p></p>} />

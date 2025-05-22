@@ -1,12 +1,22 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App.tsx'
+import { StrictMode } from 'react'
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+import { createRoot } from 'react-dom/client'
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
-  <React.StrictMode>
+import AdminLayout from './components/layout/layoutAdmin'
+import GestorCatalogoPage from './pages/admin/GestorCatalogoPage'
+import GestorNoticiasPage from './pages/admin/GestorNoticiasPage'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
     <BrowserRouter>
-      <App />
+      <Routes>
+        <Route path="/admin" element={<AdminLayout />}>
+          <Route path="gestorJuegos" element={<GestorCatalogoPage />} />
+          <Route path="gestorNoticias" element={<GestorNoticiasPage />} />
+          <Route path="gestorUsers" element={<p></p>} />
+          <Route path="gestorStats" element={<p></p>} />
+        </Route>
+      </Routes>
     </BrowserRouter>
-  </React.StrictMode>,
+  </StrictMode>
 )

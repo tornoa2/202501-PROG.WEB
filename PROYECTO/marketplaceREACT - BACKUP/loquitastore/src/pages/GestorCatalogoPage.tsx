@@ -240,20 +240,20 @@ function GestorCatalogoPage() {
 
       <Modal
         isOpen={mostrarModalFiltro}
-        title="Filter"
+        title="Filtro"
         onClose={() => setMostrarModalFiltro(false)}
         actions={null}
       >
         <div className="filters">
           <label>
-            Release date:
+            Rango de Fecha de Lanzamiento:
             <div className="inlineFilters">
               <input type="date" placeholder="min" value={fechaMinTmp} onChange={e => setFechaMinTmp(e.target.value)} className="input" />
               <input type="date" placeholder="max" value={fechaMaxTmp} onChange={e => setFechaMaxTmp(e.target.value)} className="input" />
             </div>
           </label>
           <label>
-            Genre:
+            Genero:
             <select value={generoTmp} onChange={e => setGeneroTmp(e.target.value)} className="input">
               <option value="">All</option>
               {generosDisponibles.map((gen, i) => (
@@ -262,7 +262,7 @@ function GestorCatalogoPage() {
             </select>
           </label>
           <label>
-            Price range:
+            Rango de Precio:
             <div className="inlineFilters">
               <input type="number" placeholder="min" value={precioMinTmp} onChange={e => setPrecioMinTmp(e.target.value)} className="input" />
               <input type="number" placeholder="max" value={precioMaxTmp} onChange={e => setPrecioMaxTmp(e.target.value)} className="input" />
