@@ -1,0 +1,16 @@
+.tabla-libros {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+
+.tabla-libros th,
+.tabla-libros td {
+  border: 1px solid #ccc;
+  padding: 0.75rem;
+  text-align: left;
+}
+
+.tabla-libros th {
+  background-color: #f0f0f0;
+}

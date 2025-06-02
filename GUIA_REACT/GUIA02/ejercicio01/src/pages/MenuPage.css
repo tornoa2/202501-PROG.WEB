@@ -1,0 +1,35 @@
+.menu-page {
+  text-align: center;
+  padding: 2rem;
+}
+
+.menu-page h1 {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.menu-input {
+  padding: 0.6rem;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  width: 200px;
+  margin-bottom: 1rem;
+}
+
+.menu-buttons button {
+  margin: 0.5rem;
+  padding: 0.6rem 1.2rem;
+  font-size: 1rem;
+  border: 1px solid #007bff;
+  background-color: white;
+  color: #007bff;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.menu-buttons button:hover {
+  background-color: #007bff;
+  color: white;
+}
