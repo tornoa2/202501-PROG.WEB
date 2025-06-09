@@ -1,0 +1,6 @@
+### CON TOKEN CORRECTO
+GET http://localhost:5000/profile
+Authorization: Bearer abc123
+
+### SIN TOKEN O INCORRECTO
+GET http://localhost:5000/profile

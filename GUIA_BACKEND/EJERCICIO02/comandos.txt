@@ -1,0 +1,38 @@
+*** PONER LA TERMINAL EN GITBASH ***
+
+npm init -y: crea un archivo package .json
+npm install express dotenv --save
+
+npm install @types/express @types/dotenv typescript ts-node nodemon: herramintas dev
+
+npx tsc --init
+configurar en el src, dist
+
+en el tsconfig.json poner:
+import express from 'express';
+import dotenv from 'dotenv';
+
+dotenv.config();
+const app = express()
+const PORT = process.env.PORT
+
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
+linea 30
+"rootDir": "./src"
+
+linea 62
+"outDir": "./dist"
+
+crear el index.ts en el src
+
+en el package.json, despues de la linea 6, agregar:
+"build": "npx tsc",
+"start": "node ./dist/index.js",
+"start:dev": "npx nodemon ./src/index.ts"
+
+crear archivo .env y poner puerto PORT=5000
+
+npm run start:dev

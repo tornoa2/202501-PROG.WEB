@@ -1,0 +1,11 @@
+### Modificar expositor existente
+PUT http://localhost:5000/expositores
+Content-Type: application/json
+
+{
+  "id": 2,
+  "nombre": "Victor M R Penichet",
+  "afiliacion": "Full Professor At University Of Castilla-La Mancha",
+  "pais": "ES",
+  "url": "https://ciis.ulima.edu.pe/wp-content/uploads/2024/03/Victor-420x456.jpg"
+}

@@ -1,0 +1,11 @@
+### Agregar expositor
+POST http://localhost:5000/expositores
+Content-Type: application/json
+
+{
+  "id": 4,
+  "nombre": "Nuevo Expositor",
+  "afiliacion": "Nueva Institución",
+  "pais": "AR",
+  "url": "https://ejemplo.com/imagen.jpg"
+}
